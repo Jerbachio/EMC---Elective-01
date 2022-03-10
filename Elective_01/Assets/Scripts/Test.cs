@@ -9,9 +9,14 @@ public class Test : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        StartCoroutine(LoadSceneDelay(_loadingScreenDelay));
     }
 
+    IEnumerator LoadSceneDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        Debug.log("Waiting for Seconds...");
+    }
     // Update is called once per frame
     void Update()
     {
